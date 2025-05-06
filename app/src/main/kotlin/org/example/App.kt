@@ -9,10 +9,17 @@ fun main() {
     val a = 5
     val b = 3 
     val c = 9
-
+    
     if (a < 0 && a > 0){
         println("a no puede ser = a 0")
     }
     
     println("La funcion es ${a}x² + ${b}x + ${c}")
+    println(".                                    .")
+
+    for (x in -5..5){
+
+        val resultado = a*x*x + b*x + c
+        println("Y= $resultado")
+    }
 }
