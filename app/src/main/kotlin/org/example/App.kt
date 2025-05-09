@@ -3,23 +3,41 @@
  */
 package org.example
 
-
-fun main() {
-
-    val a = 5
-    val b = 3 
-    val c = 9
-    
-    if (a < 0 && a > 0){
-        println("a no puede ser = a 0")
+fun calcular(a: Int, b: Int, c: Int) {
+    for (x in -5..5) {
+        val resultado = a * x * x + b * x + c
+        println("Y = $resultado")
     }
-    
-    println("La funcion es ${a}x² + ${b}x + ${c}")
+}
+
+fun raiz(a: Int, b: Int, c: Int) {
+    val discriminante = b * b - 4 * a * c
+    println("La discriminante es: $discriminante")
     println(".                                    .")
 
-    for (x in -5..5){
+    val raiz1 = (-b + Math.sqrt(discriminante.toDouble())) / (2 * a)
+    val raiz2 = (-b - Math.sqrt(discriminante.toDouble())) / (2 * a)
 
-        val resultado = a*x*x + b*x + c
-        println("Y= $resultado")
+    println("x1: ${"%.2f".format(raiz1)}")
+    println("x2: ${"%.2f".format(raiz2)}")
+}
+
+
+fun main() {
+    val a = 2
+    val b = 3
+    val c = 1
+
+    if (a == 0) {
+        println("a no puede ser = a 0")
+        return
     }
+
+    println("La función es ${a}x² + ${b}x + ${c}")
+    println(".                                    .")
+
+    calcular(a, b, c)
+    println(".                                    .")
+
+    raiz(a, b, c)
 }
