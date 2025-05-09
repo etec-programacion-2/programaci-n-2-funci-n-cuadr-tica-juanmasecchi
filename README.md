@@ -1,13 +1,13 @@
 # 2025-calculo-cuadratica
 
 ## Datos del Alumno
-- **Nombre**: [Nombre del Alumno]
-- **Apellido**: [Apellido del Alumno]
+- **Nombre**: [juan martin]
+- **Apellido**: [rodriguez secchi]
 
 ## Descripción del Proyecto
 Este proyecto consiste en desarrollar una aplicación en Kotlin que permita calcular y mostrar los valores de una función cuadrática, así como determinar sus raíces.
 
-## Etapas de Desarrollo
+## Etapas de Desarrollos
 
 ### Etapa 1: Estructura Básica y Definición de Coeficientes
 **Objetivo**: Crear la estructura del proyecto y definir los coeficientes de la función.
