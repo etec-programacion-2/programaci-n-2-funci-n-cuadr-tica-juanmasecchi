@@ -3,41 +3,52 @@
  */
 package org.example
 
+// Definición de constantes para los coeficientes de la función cuadrática
+const val A = 2
+const val B = 3
+const val C = 1
+
+// Función para calcular los valores de Y en el rango de x = -5 a x = 5
 fun calcular(a: Int, b: Int, c: Int) {
+    println("Valores de la función cuadrática:")
     for (x in -5..5) {
         val resultado = a * x * x + b * x + c
-        println("Y = $resultado")
+        println("x = $x → y = $resultado")
     }
+    println(".--------------------------------------------.")
 }
 
+// Función para calcular el discriminante y las raíces
 fun raiz(a: Int, b: Int, c: Int) {
     val discriminante = b * b - 4 * a * c
-    println("La discriminante es: $discriminante")
-    println(".                                    .")
+    println(" Discriminante: $discriminante")
 
-    val raiz1 = (-b + Math.sqrt(discriminante.toDouble())) / (2 * a)
-    val raiz2 = (-b - Math.sqrt(discriminante.toDouble())) / (2 * a)
-
-    println("x1: ${"%.2f".format(raiz1)}")
-    println("x2: ${"%.2f".format(raiz2)}")
-}
-
-
-fun main() {
-    val a = 2
-    val b = 3
-    val c = 1
-
-    if (a == 0) {
-        println("a no puede ser = a 0")
-        return
+    when {
+        discriminante > 0 -> {
+            val raiz1 = (-b + Math.sqrt(discriminante.toDouble())) / (2 * a)
+            val raiz2 = (-b - Math.sqrt(discriminante.toDouble())) / (2 * a)
+            println("Dos raíces reales distintas:")
+            println("x1 = ${"%.2f".format(raiz1)}")
+            println("x2 = ${"%.2f".format(raiz2)}")
+        }
+        discriminante == 0 -> {
+            val raiz = -b / (2.0 * a)
+            println(" Una raíz real doble:")
+            println("x = ${"%.2f".format(raiz)}")
+        }
+        else -> {
+            println(" No hay raíces reales (discriminante negativo).")
+        }
     }
 
-    println("La función es ${a}x² + ${b}x + ${c}")
-    println(".                                    .")
+    println(".--------------------------------------------.")
+}
 
-    calcular(a, b, c)
-    println(".                                    .")
+// Función principal
+fun main() {
+    println(" Función cuadrática: ${A}x² + ${B}x + ${C}")
+    println(".--------------------------------------------.")
 
-    raiz(a, b, c)
+    calcular(A, B, C)
+    raiz(A, B, C)
 }
